@@ -9,6 +9,7 @@ import time
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Tuple
+import pdb
 
 import numpy as np
 import pytorch_lightning as pl
@@ -402,7 +403,6 @@ class SummarizationModule(BaseTransformer):
 
     def get_dataloader(self, type_path: str, batch_size: int, shuffle: bool = False) -> DataLoader:
         dataset = self.get_dataset(type_path)
-
         if self.hparams.sortish_sampler and type_path != "test":
             sampler = dataset.make_sortish_sampler(batch_size, distributed=self.hparams.gpus > 1)
             return DataLoader(

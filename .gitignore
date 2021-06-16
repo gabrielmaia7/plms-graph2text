@@ -139,6 +139,7 @@ Temporary Items
 .apdisk
 
 logs/
+lightning_logs/
 results/
 amr/outputs/
 agenda/outputs/
